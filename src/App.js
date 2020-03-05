@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+
 import {
   BrowserRouter as Router,
   Route,
   Switch
 } from "react-router-dom";
+
+//Import in all of my components
 import Home from "./components/home";
 import Tester from "./components/tester";
 import Other from "./components/other";
 import FourOhFour from "./components/FourOhFour";
 
 
-
-
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
