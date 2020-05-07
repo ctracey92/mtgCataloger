@@ -7,10 +7,10 @@ import {
 } from "react-router-dom";
 
 //Import in all of my components
-import Home from "./components/home";
+import Home from "./Pages/Home/home";
 import Tester from "./components/tester";
 import Other from "./components/other";
-import FourOhFour from "./components/FourOhFour";
+import FourOhFour from "./Pages/404/FourOhFour";
 
 
 import './App.css';
