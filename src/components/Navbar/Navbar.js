@@ -11,6 +11,7 @@ export default function Header(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/inventory">Inventory</Nav.Link>
             <Nav.Link href="/404">404</Nav.Link>
           </Nav>
         </Navbar.Collapse>
