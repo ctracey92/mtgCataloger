@@ -22,20 +22,24 @@ class Home extends Component {
           "Sorcerer",
         ],
         stats: {
-          str: 4,
-          dex: 10,
-          con: 10,
-          wis: 10,
-          int: 10,
-          cha: 10,
+          STR: 4,
+          DEX: 10,
+          CON: 10,
+          WIS: 10,
+          INT: 10,
+          CHA: 10,
         },
       },
     };
   }
 
   render() {
-    const modifier = (num) => Math.floor((num - 10) / 2);
     const character = this.state.char;
+
+    //Determines the modifier based on the core stat
+    const modifier = (num) => Math.floor((num - 10) / 2);
+
+    //Filters down the levels to individual classes with the number of levels in each class that the user has sorted from most levels to least
     let lvls = character.levels
       .reduce((sum, i) => {
         if (sum.length > 0) {
@@ -55,10 +59,27 @@ class Home extends Component {
 
         return sum;
       }, [])
+      .sort((a, b) => b[1] - a[1])
       .map((i) => i.join(": "))
       .join("|");
 
-    
+    //Creates an array of the stats keys 
+    const statsKeys = Object.keys(character.stats);
+
+    //Gets the core stats and creates an H5 for it
+    const stats = statsKeys.map((i) => (
+      <h5 key={"coreStat-" + i} id={"coreStat-" + i}>
+        {i}: {character.stats[i]}
+      </h5>
+    ));
+
+    //Gets the modifier and creates an H5 for it
+    const modifiers = statsKeys.map((i) => (
+      <h5 key={"modifier-" + i} id={"modifier-" + i}>
+        {i}: {modifier(character.stats[i])}
+      </h5>
+    ));
+
     return (
       <div>
         <Header />
@@ -76,21 +97,11 @@ class Home extends Component {
           <Row>
             <Col lg={2}>
               <h1>Stats</h1>
-              <h5>STR: {character.stats.str}</h5>
-              <h5>DEX: {character.stats.dex}</h5>
-              <h5>CON: {character.stats.con}</h5>
-              <h5>WIS: {character.stats.wis}</h5>
-              <h5>INT: {character.stats.int}</h5>
-              <h5>CHA: {character.stats.cha}</h5>
+              {stats}
             </Col>
             <Col lg={2}>
               <h1>Modifiers</h1>
-              <h5>STR: {modifier(character.stats.str)}</h5>
-              <h5>DEX: {modifier(character.stats.dex)}</h5>
-              <h5>CON: {modifier(character.stats.con)}</h5>
-              <h5>WIS: {modifier(character.stats.wis)}</h5>
-              <h5>INT: {modifier(character.stats.int)}</h5>
-              <h5>CHA: {modifier(character.stats.cha)}</h5>
+              {modifiers}
             </Col>
           </Row>
         </Container>
