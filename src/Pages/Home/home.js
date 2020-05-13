@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Header from "../../components/Navbar/Navbar";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Table } from "react-bootstrap";
 
 class Home extends Component {
   constructor(props) {
@@ -63,21 +63,17 @@ class Home extends Component {
       .map((i) => i.join(": "))
       .join("|");
 
-    //Creates an array of the stats keys 
+    //Creates an array of the stats keys
     const statsKeys = Object.keys(character.stats);
 
+    //***Will eventually add in some conditional formatting so that the numbers will have corresponding colors based on their values.***
     //Gets the core stats and creates an H5 for it
     const stats = statsKeys.map((i) => (
-      <h5 key={"coreStat-" + i} id={"coreStat-" + i}>
-        {i}: {character.stats[i]}
-      </h5>
-    ));
-
-    //Gets the modifier and creates an H5 for it
-    const modifiers = statsKeys.map((i) => (
-      <h5 key={"modifier-" + i} id={"modifier-" + i}>
-        {i}: {modifier(character.stats[i])}
-      </h5>
+      <tr key={i} id={i}>
+        <td>{i}</td>
+        <td>{character.stats[i]}</td>
+        <td>{modifier(character.stats[i])}</td>
+      </tr>
     ));
 
     return (
@@ -90,18 +86,23 @@ class Home extends Component {
             </Col>
             <Col lg={9}>
               <h4>
-                <b>Levels:</b> {lvls}
+                <b>Levels: {lvls}</b>
               </h4>
             </Col>
           </Row>
           <Row>
-            <Col lg={2}>
-              <h1>Stats</h1>
-              {stats}
-            </Col>
-            <Col lg={2}>
-              <h1>Modifiers</h1>
-              {modifiers}
+            <Col lg={3}>
+              <h1 className="d-flex justify-content-center">Stats</h1>
+              <Table bordered>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Roll</th>
+                    <th>Mod</th>
+                  </tr>
+                </thead>
+                <tbody>{stats}</tbody>
+              </Table>
             </Col>
           </Row>
         </Container>
