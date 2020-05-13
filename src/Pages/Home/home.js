@@ -4,6 +4,7 @@ import Header from "../../components/Navbar/Navbar";
 
 import { Container, Row, Col, Table } from "react-bootstrap";
 
+//Data will eventuall be piped in from the DB
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -67,7 +68,7 @@ class Home extends Component {
     const statsKeys = Object.keys(character.stats);
 
     //***Will eventually add in some conditional formatting so that the numbers will have corresponding colors based on their values.***
-    //Gets the core stats and creates an H5 for it
+    //Gets the core stats/modifier and creates an table row for it
     const stats = statsKeys.map((i) => (
       <tr key={i} id={i}>
         <td>{i}</td>
