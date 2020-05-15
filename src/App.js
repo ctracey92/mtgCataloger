@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/mtgCataloger" component={Home} />
           <Route exact path="/inventory" component={Inventory} />
           <Route exact path="/other" component={Other} />
           <Route exact path="/tester" component={Tester} />
