@@ -1,12 +1,15 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import './styles.css'
+import "./styles.css";
+import LOGO from "./lvledFav.png"
 
 export default function Header(props) {
   return (
-    <Navbar id='nav' expand="lg" sticky="top">
+    <Navbar id="nav" expand="lg" sticky="top">
       <Container>
-        <Navbar.Brand href="#home">Nerdy App</Navbar.Brand>
+        <Navbar.Brand href="/">
+          LVLed UP
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -19,4 +22,3 @@ export default function Header(props) {
     </Navbar>
   );
 }
-
