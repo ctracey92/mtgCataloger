@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/mtgCataloger/static/css/main.72c36725.chunk.css",
+    "main.js": "/mtgCataloger/static/js/main.93afae3c.chunk.js",
+    "main.js.map": "/mtgCataloger/static/js/main.93afae3c.chunk.js.map",
+    "runtime-main.js": "/mtgCataloger/static/js/runtime-main.a8138da1.js",
+    "runtime-main.js.map": "/mtgCataloger/static/js/runtime-main.a8138da1.js.map",
+    "static/css/2.9337ff71.chunk.css": "/mtgCataloger/static/css/2.9337ff71.chunk.css",
+    "static/js/2.9619b312.chunk.js": "/mtgCataloger/static/js/2.9619b312.chunk.js",
+    "static/js/2.9619b312.chunk.js.map": "/mtgCataloger/static/js/2.9619b312.chunk.js.map",
+    "index.html": "/mtgCataloger/index.html",
+    "precache-manifest.68b695e547bd7c6e41c2a481afffd0ec.js": "/mtgCataloger/precache-manifest.68b695e547bd7c6e41c2a481afffd0ec.js",
+    "service-worker.js": "/mtgCataloger/service-worker.js",
+    "static/css/2.9337ff71.chunk.css.map": "/mtgCataloger/static/css/2.9337ff71.chunk.css.map",
+    "static/css/main.72c36725.chunk.css.map": "/mtgCataloger/static/css/main.72c36725.chunk.css.map",
+    "static/js/2.9619b312.chunk.js.LICENSE.txt": "/mtgCataloger/static/js/2.9619b312.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/mtgCataloger/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a8138da1.js",
+    "static/css/2.9337ff71.chunk.css",
+    "static/js/2.9619b312.chunk.js",
+    "static/css/main.72c36725.chunk.css",
+    "static/js/main.93afae3c.chunk.js"
+  ]
+}
